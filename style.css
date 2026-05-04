@@ -1,0 +1,278 @@
+/* Import a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+  background: linear-gradient(90deg, #004080, #ff6600);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  animation: fadeInDown 1s ease;
+}
+nav {
+  background: #004080;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.75rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover { color: #ffcc00; }
+
+/* Existing global styles above... */
+
+/* HERO SLIDESHOW */
+.hero {
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* overlay for readability */
+  z-index: 1;
+}
+.hero h2 {
+  position: relative;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  z-index: 2;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero-bg.active {
+  opacity: 1;
+}
+
+/* CAPTIONS */
+.hero-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+}
+.hero-caption.show {
+  opacity: 1;
+}
+
+
+/* Sections */
+.section { padding: 2rem; text-align: center; }
+
+/* Cards with Hover Animation */
+.cards {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+}
+.card {
+  background: white; border: 1px solid #ddd; border-radius: 8px;
+  padding: 2rem; width: 45%; min-width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.card h3 { color: #004080; font-size: 1.5rem; margin-bottom: 1rem;}
+
+/* Buttons with Animation */
+button {
+  background: #ff6600; color: white; border: none;
+  padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer;
+  font-size: 1rem; transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background: #004080;
+  transform: scale(1.05);
+}
+
+/* Gallery */
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.gallery img {
+  width: 100%; border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* Forms */
+form {
+  max-width: 500px; margin: auto; text-align: left;
+  animation: fadeIn 1s ease;
+}
+form input, form textarea, form select {
+  width: 100%; padding: 0.75rem; margin: 0.5rem 0;
+  border: 1px solid #ccc; border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+form input:focus, form textarea:focus, form select:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #eee;
+  padding: 2rem;
+  border-radius: 8px;
+  animation: fadeIn 1.5s ease;
+}
+.testimonial {
+  margin-bottom: 1rem;
+  font-style: italic;
+  transition: transform 0.3s ease;
+}
+.testimonial:hover { transform: scale(1.02); }
+
+/* Footer */
+footer {
+  background: #004080; color: white; text-align: center; padding: 1rem;
+}
+footer a { color: #ffcc00; text-decoration: none; }
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.service-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .service-img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.testimonials {
+  background: #eee;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+}
+.testimonial {
+  margin-bottom: 1rem;
+  font-style: italic;
+  transition: transform 0.3s ease;
+}
+.testimonial:hover { transform: scale(1.02); }
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 45%;
+  min-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.service-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .service-img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.testimonials {
+  background: #eee;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+}
+.testimonial {
+  margin-bottom: 1rem;
+  font-style: italic;
+  transition: transform 0.3s ease;
+}
+.testimonial:hover { transform: scale(1.02); }
+
+.rates-table {
+  width: 80%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.rates-table th, .rates-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;          /* adds breathing room */
+  text-align: left;
+}
+
+.rates-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.rates-note {
+  margin: 1.5rem auto;
+  width: 80%;
+  font-style: italic;
+  background: #fafafa;
+  padding: 1rem;
+  border-left: 4px solid #0077cc;
+}
